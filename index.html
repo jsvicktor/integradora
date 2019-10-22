@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href="css/plugins/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <form action="php/login.php" method="POST">
+                    <h2 class="text-center">Login</h2>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                    </div>
+                    <input type="submit" value="Acceder" class="btn btn-primary btn-block">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="css/plugins/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

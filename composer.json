@@ -1,0 +1,13 @@
+{
+    "name": "victor/web-app",
+    "authors": [
+        {
+            "name": "JSVictor",
+            "email": "jsvictor@outlok.es"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.5",
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}

@@ -1,13 +1,13 @@
-<div class="d-flex toggled" id="wrapper">
+<div class="d-flex " id="wrapper">
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">AgroApp </div>
+        <div class="sidebar-heading"> <a href ="principal.php" class="list-group-item-action"> AgroApp</a> </div>
         <div class="list-group list-group-flush">
-            <a href="registro_cultivo.php" class="list-group-item list-group-item-action bg-light">Agregar cultivo</a>
-            <a href="registro_plaga.php" class="list-group-item list-group-item-action bg-light">Agregar plaga</a>
-            <a href="principal.php" class="list-group-item list-group-item-action bg-light">Ver cultivos</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Ver Plagas</a>
+            <a href="agregar-cultivo.php" class="list-group-item list-group-item-action bg-light">Agregar cultivo</a>
+            <a href="agregar-plaga.php" class="list-group-item list-group-item-action bg-light">Agregar plaga</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Selecionar planta</a>
+
 
         </div>
     </div>
@@ -20,8 +20,8 @@
             <button class="btn btn-primary" id="menu-toggle">Menú</button>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
+            <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

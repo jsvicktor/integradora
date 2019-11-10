@@ -32,33 +32,8 @@ $dtaPlaga=['nombre'=> $nombre,
 $res = $client->request('POST', '', ['form_params' => $dtaPlaga]);
 if ($res->getStatusCode() == '200') //Verifico que me retorne 200 = OK
 {
-  echo "Se inserto un post (articulo)";
+  echo"<script>alert('Se ha ingresado una plaga correctamente');  window.location= '../view/principal.php'</script>";
+
 }
 
-
-//echo $direccion;
-    
-// //Cracion de los datos a enviar a la api
-// $dtaUser = ['email'=>$usuario,
-//              'password'=>$contrasenia
-//             ];
-            
-// //Resultados de la condulta a la api        
-// $res = $client->request('POST', '', ['form_params' => $dtaUser]);
-// if ($res->getStatusCode() == '200') 
-// {
-//   //Resultados del retorno de la api.
-//   $result =  json_decode($res->getBody(), true);
-  
-//   if ($result=="Login exitoso"){
-//     //Logueado correctamente
-//     session_start();
-//     $_SESSION["usuario"] = $usuario;
-//     header("Location: ../view/principal.php");
-//   } else {
-//        //Rechazo de login.
-//        echo "El usuario o la contraseña son incorrectos";
-//        header("Location: ../index.html");
-//   }
-// }
 ?>

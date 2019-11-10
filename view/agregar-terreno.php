@@ -12,7 +12,7 @@ if (empty($_SESSION["usuario"])) {
 
     <head>
         <meta charset="utf-8">
-        <title>Agregar Plaga</title>
+        <title>Agregar Terreno</title>
         <link href="../css/plugins/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="../css/daliasidebar.css" rel="stylesheet">
         <link href="../css/visualizador.css" rel="stylesheet">
@@ -22,22 +22,13 @@ if (empty($_SESSION["usuario"])) {
         <!-- /#Inlcuye el navbar y el menu lateral -->
         <?php include 'navbar.php';?>
         <!-- /#page-content-wrapper -->
-        <form class="p-5" action="../php/registro_plaga.php" method="POST">
+        <form class="p-5" action="../php/registro_terreno.php" method="POST">
             <div class="form-group text-center">
-                <label> Ingresar datos de la plaga </label>
-                <input type="text" class="form-control m-3" id="name" name="nombre" placeholder="Nombre de la plaga" required>
-                <input type="text" class="form-control m-3" id="time" name="tiempo" placeholder="Duracion del ciclo biologico en dias" required>
-                <input type="text" class="form-control m-3" id="name" name="huevecillos" placeholder="Numero de huevecillos" required>
-                <textarea class="form-control m-3" id="description" name="apariencia" placeholder=" Apariencia" rows="3" required></textarea >
-                
-               
-             <div id="preview"  alt="Responsive image">
-                 
-             </div>
-                <input class="m-3" id="file" type="file"/>
-                
-                <input type="submit" value="Registrar plaga" class="btn btn-primary btn-block m-3">
-            </div>
+                <label> Ingresar datos del terreno </label>
+                <input type="text" class="form-control m-3" id="name" name="nombre" placeholder="Nombre del terreno" required>
+                <input type="text" class="form-control m-3" id="time" name="largo" placeholder="Largo" required>
+                <input type="text" class="form-control m-3" id="name" name="ancho" placeholder="Ancho" required>
+                <input type="submit" value="Registrar terreno" class="btn btn-primary btn-block m-3">
         </form>
         <!-- /#wrapper -->
         <script src="../js/plugins/jquery/dist/jquery.min.js"></script>

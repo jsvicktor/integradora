@@ -6,6 +6,45 @@ if (empty($_SESSION["usuario"])) {
     header("Location: ../index.html");
     exit();
 }
+
+///------------Obtencion de data para la produccion 
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+require "../vendor/autoload.php";
+use GuzzleHttp\Client;
+
+
+$client = new Client([
+  'base_uri' => 'http://localhost:3000/obtenTodosProduccion',
+  'timeout'  => 5.0,
+]);
+
+$array_data_nombre[]=array();
+$array_data_cultivo[]=array();
+$array_data_terreno[]=array();
+$dtaCultivo=['nombre'=> 'mosca'
+          ];
+
+$res = $client->request('GET', '', ['form_params' => $dtaCultivo]);
+if ($res->getStatusCode() == '200') //Verifico que me retorne 200 = OK
+{
+
+  $resultados=json_decode($res->getBody());
+  $i=0;
+  while($resultados->{'nombre'}[$i]){
+    array_push($array_data_nombre,($resultados->{'nombre'}[$i]->{'nomProduccion'}));
+    array_push($array_data_cultivo,($resultados->{'nombre'}[$i]->{'nomCultivo'}));
+    array_push($array_data_terreno,($resultados->{'nombre'}[$i]->{'nomTerreno'}));
+
+    //print_r($resultados->{'nombre'}[$i]->{'nombre'});
+    //echo "<br/>";
+    $i++;
+  }
+}
+unset($array_data_nombre[0]);
+unset($array_data_cultivo[0]);
+unset($array_data_terreno[0]);
+
+
 ?>
 
 
@@ -25,31 +64,39 @@ if (empty($_SESSION["usuario"])) {
         <!-- /#page-content-wrapper -->
 
         <div class="card-deck p-5">
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+
+            <div class="container">
+                <div class="row-fluid ">
+                    <!-- my php code which uses x-path to get results from xml query. -->
+                    <?php foreach ( $array_data_nombre as $elements => $value) : ?>
+                    <div class="card">
+                        <div class="card-header"> Nombre de cultivo:<?php echo $array_data_nombre[$elements ]?>                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Plantas cultivadas:
+                                <?php echo $array_data_cultivo[$elements ]?>
+                            </h5>
+                            <p class=hbb "card-text">Terreno en el cual se cultiva:
+                                <?php echo $array_data_terreno[$elements ]?> </p>
+                            <a href="detalles-siembra.php?nomSiembra=<?php echo $array_data_nombre[$elements ]?>&nomCultivo=<?php echo $array_data_cultivo[$elements ]?>&nomTerreno=<?php echo $array_data_terreno[$elements ]?>" class="btn btn-primary"> Ver mas del cultivo </a>
+                        </div>
+                    </div>
+                    <br>
+
+                    <?php endforeach; ?>
                 </div>
             </div>
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+            <!--container div  -->
+
+
+            <!-- <div class="card">
+                <img class="card-img-top" src="../assets/Lechuga.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">Cultivo de lechuga</h5>
+                    <p class="card-text">Variedad: Italiana</p>
+                    <p class="card-text"><small class="text-muted">Iniciado el 01 de Octubre</small></p>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
+            </div> -->
         </div>
         <!-- /#wrapper -->
 

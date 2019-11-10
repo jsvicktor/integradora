@@ -6,7 +6,8 @@
         <div class="list-group list-group-flush">
             <a href="agregar-cultivo.php" class="list-group-item list-group-item-action bg-light">Agregar cultivo</a>
             <a href="agregar-plaga.php" class="list-group-item list-group-item-action bg-light">Agregar plaga</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Selecionar planta</a>
+            <a href="agregar-terreno.php" class="list-group-item list-group-item-action bg-light">Agregar terreno</a>
+            <a href="agregar-siembra.php" class="list-group-item list-group-item-action bg-light">Iniciar siembra</a>
 
 
         </div>
@@ -29,8 +30,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi perfil</a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"> No se que va aca</a>
-                            <a class="dropdown-item" href="#">Tampoco se que va aca</a>
+                            <a class="dropdown-item" href="#">Mi perfil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../php/close_sesion.php">Cerrar sesión</a>
                         </div>
